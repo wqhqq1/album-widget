@@ -1,0 +1,9 @@
+version: "Apple Swift version 5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)"
+options: "a8aa1b64e75a0d8054921a51d0c416ac"
+build_time: [1606308171, 393889000]
+inputs:
+  "/Users/wqh/Album Widget/Album Widget/Functions/Photo Data.swift": [9223372036, 854775807]
+  "/Users/wqh/Album Widget/AlbumIntent/IntentHandler.swift": [9223372036, 854775807]
+  "/Users/wqh/Album Widget/build/Album Widget.build/Release-iphoneos/AlbumIntent.build/DerivedSources/IntentDefinitionGenerated/Album/ConfigurationIntent.swift": [9223372036, 854775807]
+  "/Users/wqh/Album Widget/build/Album Widget.build/Release-iphoneos/AlbumIntent.build/DerivedSources/IntentDefinitionGenerated/Album/ImgMode.swift": [9223372036, 854775807]
+  "/Users/wqh/Album Widget/build/Album Widget.build/Release-iphoneos/AlbumIntent.build/DerivedSources/IntentDefinitionGenerated/Album/AlbumType.swift": [9223372036, 854775807]
