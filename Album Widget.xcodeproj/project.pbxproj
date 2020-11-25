@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,9 @@
 		08615FB7256A48D000CB5A5F /* AlbumIntent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 08615FB0256A48D000CB5A5F /* AlbumIntent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		08615FBF256A48DA00CB5A5F /* Album.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 08615F9A256A484F00CB5A5F /* Album.intentdefinition */; };
 		08615FC3256A48E000CB5A5F /* Photo Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E8F84B2562663500D64729 /* Photo Data.swift */; };
+		08A279B3256F1BE900E56A00 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08A279B7256F1BE900E56A00 /* Localizable.strings */; };
+		08A279B4256F1BE900E56A00 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08A279B7256F1BE900E56A00 /* Localizable.strings */; };
+		08A279B5256F1BE900E56A00 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08A279B7256F1BE900E56A00 /* Localizable.strings */; };
 		08BC37262568E54400D9A89D /* PhotoDropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BC37252568E54400D9A89D /* PhotoDropDelegate.swift */; };
 		08E8F835256265A000D64729 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E8F834256265A000D64729 /* AppDelegate.swift */; };
 		08E8F837256265A000D64729 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E8F836256265A000D64729 /* SceneDelegate.swift */; };
@@ -80,6 +83,9 @@
 		08615FB2256A48D000CB5A5F /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
 		08615FB4256A48D000CB5A5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		08615FB8256A48D000CB5A5F /* AlbumIntent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AlbumIntent.entitlements; sourceTree = "<group>"; };
+		08A279B2256F1BD000E56A00 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		08A279B6256F1BE900E56A00 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		08A279BB256F1BEB00E56A00 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		08BC37252568E54400D9A89D /* PhotoDropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDropDelegate.swift; sourceTree = "<group>"; };
 		08E8F831256265A000D64729 /* Album Widget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Album Widget.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08E8F834256265A000D64729 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +155,35 @@
 			path = AlbumIntent;
 			sourceTree = "<group>";
 		};
+		08A279AF256F1B5E00E56A00 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				08E8F8512562701D00D64729 /* SingleAlbumView.swift */,
+				08E8F85B2563AAC800D64729 /* OrigButtonStyle.swift */,
+				083EAD2C25651350007E2F49 /* SinglePhotoView.swift */,
+				08BC37252568E54400D9A89D /* PhotoDropDelegate.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		08A279B0256F1B6A00E56A00 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				08E8F858256393F700D64729 /* UITextField.swift */,
+				08E8F85E2563B02E00D64729 /* PhotoPicker.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		08A279B1256F1B7300E56A00 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				08A279B7256F1BE900E56A00 /* Localizable.strings */,
+				08E8F84B2562663500D64729 /* Photo Data.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 		08E8F8282562659F00D64729 = {
 			isa = PBXGroup;
 			children = (
@@ -208,13 +243,9 @@
 		08E8F84A2562660500D64729 /* Functions */ = {
 			isa = PBXGroup;
 			children = (
-				08E8F84B2562663500D64729 /* Photo Data.swift */,
-				08E8F8512562701D00D64729 /* SingleAlbumView.swift */,
-				08E8F858256393F700D64729 /* UITextField.swift */,
-				08E8F85B2563AAC800D64729 /* OrigButtonStyle.swift */,
-				08E8F85E2563B02E00D64729 /* PhotoPicker.swift */,
-				083EAD2C25651350007E2F49 /* SinglePhotoView.swift */,
-				08BC37252568E54400D9A89D /* PhotoDropDelegate.swift */,
+				08A279B0256F1B6A00E56A00 /* UIKit */,
+				08A279AF256F1B5E00E56A00 /* SwiftUI */,
+				08A279B1256F1B7300E56A00 /* Other */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -307,12 +338,13 @@
 				};
 			};
 			buildConfigurationList = 08E8F82C2562659F00D64729 /* Build configuration list for PBXProject "Album Widget" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 08E8F8282562659F00D64729;
 			productRefGroup = 08E8F832256265A000D64729 /* Products */;
@@ -332,6 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				08615F9C256A485200CB5A5F /* Assets.xcassets in Resources */,
+				08A279B4256F1BE900E56A00 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +372,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08A279B5256F1BE900E56A00 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				08E8F841256265A400D64729 /* LaunchScreen.storyboard in Resources */,
+				08A279B3256F1BE900E56A00 /* Localizable.strings in Resources */,
 				08E8F83E256265A400D64729 /* Preview Assets.xcassets in Resources */,
 				08E8F83B256265A400D64729 /* Assets.xcassets in Resources */,
 			);
@@ -410,10 +445,21 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		08A279B7256F1BE900E56A00 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				08A279B6256F1BE900E56A00 /* en */,
+				08A279BB256F1BEB00E56A00 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			path = "Album Widget/Functions/Other";
+			sourceTree = SOURCE_ROOT;
+		};
 		08E8F83F256265A400D64729 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				08E8F840256265A400D64729 /* Base */,
+				08A279B2256F1BD000E56A00 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -541,6 +587,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -602,6 +649,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
