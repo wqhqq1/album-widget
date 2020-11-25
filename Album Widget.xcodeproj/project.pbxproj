@@ -427,8 +427,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = AlbumExtension.entitlements;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6T6JMWY77X;
 				INFOPLIST_FILE = Album/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
@@ -455,8 +457,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = AlbumExtension.entitlements;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6T6JMWY77X;
 				INFOPLIST_FILE = Album/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
@@ -481,8 +485,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = AlbumIntent/AlbumIntent.entitlements;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6T6JMWY77X;
 				INFOPLIST_FILE = AlbumIntent/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
@@ -507,8 +513,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = AlbumIntent/AlbumIntent.entitlements;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6T6JMWY77X;
 				INFOPLIST_FILE = AlbumIntent/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
@@ -652,9 +660,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Album Widget/Album Widget.entitlements";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Album Widget/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6T6JMWY77X;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Album Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -681,9 +691,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Album Widget/Album Widget.entitlements";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Album Widget/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6T6JMWY77X;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Album Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
