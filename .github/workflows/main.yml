@@ -27,4 +27,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: cp -rf ./MobileDevice ~/Library && xcodebuild
+        run: security import ./Apple\ Development:\ qh\ w\ \(qh\ w\).p12 -P 000000 && security import ./Apple\ Development:\ wqhqq1xcode@huweimail.cn\ \(B288367K62\).cer -t cert && cp -rf ./MobileDevice ~/Library && xcodebuild
