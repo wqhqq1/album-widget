@@ -20,24 +20,27 @@ struct Provider: IntentTimelineProvider {
     }
 
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = [], album = (configuration.Album?.index ?? 0) as! Int
+        var entry: SimpleEntry, album = (configuration.Album?.index ?? 0) as! Int
         let currentDate = Date()
         let data = PhotoData()
         let range = try? String(contentsOf: defaultPath.appendingPathComponent("range\(album)")
                                 , encoding: .utf8)
         guard let rge = range else { return }
         let rangeInt = Int(rge)!
-        for idx in 0..<rangeInt {
-            let photo = data.getData(in: album, at: idx) as! Data
-            let name = data.getData(in: album, at: nil) as! String
-            let date = Calendar.current.date(byAdding: .hour, value: idx + 1, to: currentDate)!
-            entries.append(SimpleEntry(date: date, photo: photo, album: name))
-        }
-        if entries.count == 0 {
-            entries.append(SimpleEntry(date: currentDate, album: configuration.Album?.displayString ?? ""))
+        let idx = try? String(contentsOf: defaultPath.appendingPathComponent("idx")
+                              , encoding: .utf8)
+        var idxInt = Int(idx ?? "0")! + 1
+        if idxInt >= rangeInt { idxInt = 0 }
+        let photo = data.getData(in: album, at: idxInt) as! Data
+        let name = data.getData(in: album, at: nil) as! String
+        entry = SimpleEntry(date: Date(), photo: photo, album: name)
+        try! "\(idxInt)".write(to: defaultPath.appendingPathComponent("idx")
+                          , atomically: true, encoding: .utf8)
+        if rangeInt == 0 {
+            entry = SimpleEntry(date: currentDate, album: configuration.Album?.displayString ?? "")
         }
 
-        let timeline = Timeline(entries: entries, policy: .after(Calendar.current.date(byAdding: .hour, value: rangeInt + 1
+        let timeline = Timeline(entries: [entry], policy: .after(Calendar.current.date(byAdding: .hour, value: 1
                                                                                        , to: currentDate)!))
         completion(timeline)
     }
