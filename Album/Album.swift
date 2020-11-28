@@ -29,12 +29,12 @@ struct Provider: IntentTimelineProvider {
         let rangeInt = Int(rge)!
         let idx = try? String(contentsOf: defaultPath.appendingPathComponent("idx")
                               , encoding: .utf8)
-        var idxInt = Int(idx ?? "0")! + 1
+        var idxInt = Int(idx ?? "0")!
         if idxInt >= rangeInt { idxInt = 0 }
         let photo = data.getData(in: album, at: idxInt) as! Data
         let name = data.getData(in: album, at: nil) as! String
         entry = SimpleEntry(date: Date(), photo: photo, album: name)
-        try! "\(idxInt)".write(to: defaultPath.appendingPathComponent("idx")
+        try! "\(idxInt + 1)".write(to: defaultPath.appendingPathComponent("idx")
                           , atomically: true, encoding: .utf8)
         if rangeInt == 0 {
             entry = SimpleEntry(date: currentDate, album: configuration.Album?.displayString ?? "")
