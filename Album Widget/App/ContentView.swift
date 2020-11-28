@@ -16,6 +16,7 @@ struct ContentView: View {
     @State var message = ""
     @State var showError = false
     @State var updateNName = false
+    @State var isSaving = false
     var body: some View {
         GeometryReader { geo in
             NavigationView {
@@ -85,13 +86,22 @@ struct ContentView: View {
                                     self.showTools = !self.showTools
                                 }
                             }) {
-                                Text(self.showTools ? "Done":"Edit")
+                                Text(self.showTools ? "Done":"Edit").padding(showTools ? 0:2)
                             }
-                            Button(action: {
-                                _ = self.photoData.save()
-                                WidgetCenter.shared.reloadAllTimelines()
-                            }) {
-                                Text("Save")
+                            if isSaving {
+                                ProgressView().progressViewStyle(CircularProgressViewStyle()).padding()
+                            }
+                            else {
+                                Button(action: {
+                                    isSaving = true
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                        _ = self.photoData.save()
+                                        WidgetCenter.shared.reloadAllTimelines()
+                                        isSaving = false
+                                    }
+                                }) {
+                                    Text("Save")
+                                }
                             }
                         }
                         )

@@ -75,10 +75,6 @@ struct NewTextField: UIViewRepresentable {
             parent = view
         }
         func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-            if string == "\n" {
-                UIApplication.shared.endEditing()
-                return true
-            }
             let willUpdateText = textField.text ?? ""
             guard let currentRange = Range(range, in: willUpdateText) else {return false}
             let updatedText = willUpdateText.replacingCharacters(in: currentRange, with: string)
