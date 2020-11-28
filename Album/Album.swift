@@ -22,24 +22,30 @@ struct Provider: IntentTimelineProvider {
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [SimpleEntry] = [], album = (configuration.Album?.index ?? 0) as! Int
         let currentDate = Date()
-        let data = PhotoData(path: defaultPath) ?? PhotoData()
-        for (index, photo) in data.Photo[album].enumerated() {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: index, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, photo: photo.data, album: data.data[album].index)
-            entries.append(entry)
+        let data = PhotoData()
+        let range = try? String(contentsOf: defaultPath.appendingPathComponent("range\(album)")
+                                , encoding: .utf8)
+        guard let rge = range else { return }
+        let rangeInt = Int(rge)!
+        for idx in 0..<rangeInt {
+            let photo = data.getData(in: album, at: idx) as! Data
+            let name = data.getData(in: album, at: nil) as! String
+            let date = Calendar.current.date(byAdding: .hour, value: idx + 1, to: currentDate)!
+            entries.append(SimpleEntry(date: date, photo: photo, album: name))
         }
         if entries.count == 0 {
             entries.append(SimpleEntry(date: currentDate, album: configuration.Album?.displayString ?? ""))
         }
 
-        let timeline = Timeline(entries: entries, policy: .after(Calendar.current.date(byAdding: .hour, value: data.Photo[album].count, to: currentDate)!))
+        let timeline = Timeline(entries: entries, policy: .after(Calendar.current.date(byAdding: .hour, value: rangeInt + 1
+                                                                                       , to: currentDate)!))
         completion(timeline)
     }
 }
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
-    var photo: UIImage? = nil
+    var photo: Data? = nil
     var album: String = ""
 }
 
@@ -50,7 +56,7 @@ struct AlbumWidgetEntryView : View {
         ZStack {
             Text("There's no photo in the album \(entry.album).")
             if let photo = entry.photo {
-                Image(uiImage: photo).resizable().scaledToFill()
+                Image(uiImage: UIImage(data: photo)!).resizable().scaledToFill()
             }
         }
     }

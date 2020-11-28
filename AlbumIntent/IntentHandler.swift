@@ -10,11 +10,18 @@ import Intents
 class IntentHandler: INExtension, ConfigurationIntentHandling {
     
     func provideAlbumOptionsCollection(for intent: ConfigurationIntent, searchTerm: String?, with completion: @escaping (INObjectCollection<AlbumType>?, Error?) -> Void) {
-        let data = PhotoData(path: defaultPath) ?? PhotoData()
-        let albums: [AlbumType] = data.data.map { item in
-            let album = AlbumType(identifier: "\(item.id)", display: item.index)
-            album.index = item.id as NSNumber
-            return album
+        var albums: [AlbumType] = []
+        let range = try? String(contentsOf: defaultPath.appendingPathComponent("range")
+                                , encoding: .utf8)
+        if let range = range {
+            if let range = Int(range) {
+                for index in 0..<range {
+                    let name = try! String(contentsOf: defaultPath.appendingPathComponent("photoConfig\(index)"), encoding: .utf8)
+                    let album = AlbumType(identifier: "\(index)", display: name)
+                    album.index = index as NSNumber
+                    albums.append(album)
+                }
+            }
         }
         let objCollection = INObjectCollection(items: albums)
         completion(objCollection, nil)
