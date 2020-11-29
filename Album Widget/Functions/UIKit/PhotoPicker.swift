@@ -14,7 +14,7 @@ struct PhotoPicker: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> PHPickerViewController {
         requestPermission()
         var config = PHPickerConfiguration()
-        config.selectionLimit = 10
+        config.selectionLimit = 100
         config.filter = .images
         let controller = PHPickerViewController(configuration: config)
         controller.modalPresentationStyle = .automatic

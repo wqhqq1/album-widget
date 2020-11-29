@@ -34,7 +34,7 @@ class PhotoData: ObservableObject {
             let rgeInt = Int(rge!)!
             for idx in 0..<rgeInt {
                 let pho = try? Data(contentsOf: defaultPath.appendingPathComponent("photo\(index).\(idx)"))
-                tmpPhoto.append(photo(data: UIImage(data: pho!)!))
+                tmpPhoto.append(photo(id: idx, data: UIImage(data: pho!)!))
             }
             self.Photo.append(tmpPhoto)
         }
@@ -68,7 +68,7 @@ class PhotoData: ObservableObject {
             converedData.append(pDataS(id: item.id, index: item.index, cover: item.cover?.pngData(), isDeleted: item.isDeleted))
             var pho: [photoS] = []
             for item in removedPhoto[index] {
-                pho.append(photoS(id: item.id, data: item.data.resizeImage()!, isDeleted: item.isDeleted))
+                pho.append(photoS(data: item.data.resizeImage()!, isDeleted: item.isDeleted))
             }
             converedPhoto.append(pho)
         }
@@ -159,7 +159,7 @@ class PhotoData: ObservableObject {
 }
 
 struct photo: Identifiable, Equatable {
-    var id: UUID = UUID()
+    var id: Int = 0
     var data: UIImage
     var isDeleted = false
 }

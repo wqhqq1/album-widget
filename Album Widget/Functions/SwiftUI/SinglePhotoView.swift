@@ -10,16 +10,10 @@ import SwiftUI
 struct SinglePhotoView: View {
     @EnvironmentObject var photoData: PhotoData
     @State var index: Int
-    @State var id: UUID
+    @State var idInt: Int
     @State var data: UIImage
     @Binding var showTools: Bool
     var body: some View {
-        var idInt = 0
-        DispatchQueue.main.async {
-            for i in 0..<photoData.Photo[index].count {
-                if self.id == photoData.Photo[index][i].id { idInt = i;break }
-            }
-        }
         return ZStack {
             Image(uiImage: self.data).resizable().frame(width: 100, height: 150).scaledToFill()
             if self.showTools {
@@ -35,7 +29,8 @@ struct SinglePhotoView: View {
                     }
                 }
             }
-        }.frame(width: 100, height: 150)
+        }
+        .frame(width: 100, height: 150)
     }
 }
 

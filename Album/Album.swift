@@ -33,7 +33,7 @@ struct Provider: IntentTimelineProvider {
         if idxInt >= rangeInt { idxInt = 0 }
         let photo = data.getData(in: album, at: idxInt) as! Data
         let name = data.getData(in: album, at: nil) as! String
-        entry = SimpleEntry(date: Date(), photo: photo, album: name)
+        entry = SimpleEntry(date: currentDate, photo: photo, album: name)
         try! "\(idxInt + 1)".write(to: defaultPath.appendingPathComponent("idx")
                           , atomically: true, encoding: .utf8)
         if rangeInt == 0 {
