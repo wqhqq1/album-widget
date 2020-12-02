@@ -5,3 +5,19 @@
   Created by wqh on 2020/11/26.
   
 */
+done = "完成";
+edit = "编辑";
+template = "模板";
+name = "名称";
+newName = "新名称";
+nvTitle = "我的相册";
+new = "新相册";
+save = "保存";
+import = "导入...";
+drag = "拖拽以排序";
+delete = "长按以删除";
+cancel = "长按对勾以撤销更改";
+used = "此相册名已使用";
+widgetName = "相册挂件";
+widgetDiscription = "此挂件将按顺序展示您自定义相册内的照片";
+noContent = "无照片的相册";

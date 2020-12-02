@@ -30,14 +30,16 @@ struct Provider: IntentTimelineProvider {
         let idx = try? String(contentsOf: defaultPath.appendingPathComponent("idx")
                               , encoding: .utf8)
         var idxInt = Int(idx ?? "0")!
-        if idxInt >= rangeInt { idxInt = 0 }
-        let photo = data.getData(in: album, at: idxInt) as! Data
-        let name = data.getData(in: album, at: nil) as! String
-        entry = SimpleEntry(date: currentDate, photo: photo, album: name)
-        try! "\(idxInt + 1)".write(to: defaultPath.appendingPathComponent("idx")
-                          , atomically: true, encoding: .utf8)
         if rangeInt == 0 {
-            entry = SimpleEntry(date: currentDate, album: configuration.Album?.displayString ?? "")
+            print("empty")
+            entry = SimpleEntry(date: currentDate, album: configuration.Album?.name ?? "")
+        } else {
+            if idxInt >= rangeInt { idxInt = 0 }
+            let photo = data.getData(in: album, at: idxInt) as! Data
+            let name = data.getData(in: album, at: nil) as! String
+            entry = SimpleEntry(date: currentDate, photo: photo, album: name)
+            try! "\(idxInt + 1)".write(to: defaultPath.appendingPathComponent("idx")
+                              , atomically: true, encoding: .utf8)
         }
 
         let timeline = Timeline(entries: [entry], policy: .after(Calendar.current.date(byAdding: .hour, value: 1
@@ -57,7 +59,7 @@ struct AlbumWidgetEntryView : View {
 
     var body: some View {
         ZStack {
-            Text("There's no photo in the album \(entry.album).")
+            Text("\(NSLocalizedString("noContent", comment: ""))(\(entry.album))")
             if let photo = entry.photo {
                 Image(uiImage: UIImage(data: photo)!).resizable().scaledToFill()
             }
@@ -73,8 +75,8 @@ struct AlbumWidget: Widget {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
             AlbumWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("Album Widget")
-        .description("This widget shows photos from your customized album.")
+        .configurationDisplayName(NSLocalizedString("widgetName", comment: ""))
+        .description(NSLocalizedString("widgetDiscription", comment: ""))
     }
 }
 

@@ -19,6 +19,7 @@ class IntentHandler: INExtension, ConfigurationIntentHandling {
                     let name = try! String(contentsOf: defaultPath.appendingPathComponent("photoConfig\(index)"), encoding: .utf8)
                     let album = AlbumType(identifier: "\(index)", display: name)
                     album.index = index as NSNumber
+                    album.name = name
                     albums.append(album)
                 }
             }

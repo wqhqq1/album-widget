@@ -32,7 +32,7 @@ struct SingleAlbumView: View {
             NavigationLink(destination: CollectingPage(index: self.index).environmentObject(self.photoData)) {
                 Rectangle()
                     .foregroundColor(.blue)
-                    .overlay(Text("There's no data added.").opacity(0.8))
+                    .overlay(Text(NSLocalizedString("noContent", comment: "")).opacity(0.8))
             }.buttonStyle(OrigButtonStyle())
             NavigationLink(destination: CollectingPage(index: self.index).environmentObject(self.photoData)) {
                 if let cover = self.photoData.data[index].cover {
@@ -51,7 +51,7 @@ struct SingleAlbumView: View {
                             Image(systemName: "trash.fill")
                                 .onTapGesture {
 //                                    print("tap")
-                                    self.message = "Long press to delete";self.title = "Tips";self.showAlert = true
+                                    self.message = NSLocalizedString("delete", comment: "");self.title = "Tips";self.showAlert = true
                                 }
                                 .onLongPressGesture {
                                     let error = photoData.remove(at: index)
@@ -63,7 +63,7 @@ struct SingleAlbumView: View {
                             Image(systemName: self.editingName ? "checkmark":"textbox")
                                 .onTapGesture {
                                     if !UserDefaults.standard.bool(forKey: "showTip0") {
-                                        self.message = "Long press checkmark to cancel name editing.";self.title = "Tips";self.showAlert = true
+                                        self.message = NSLocalizedString("cancel", comment: "");self.title = "Tips";self.showAlert = true
                                         UserDefaults.standard.set(true, forKey: "showTip0")
                                     }
                                     if !self.editingName { self.editingName = true;return }
@@ -83,11 +83,11 @@ struct SingleAlbumView: View {
             VStack {
                 ZStack{
                     Rectangle().foregroundColor(Color("normal")).frame(height: 30).opacity(0.8)
-                    if self.editingName {
-                        NewTextField(.constant("New Name"), text: self.$newName, updateNow: self.$updateNow).frame(height: 30)
+                    if !self.editingName {
+                        Text(photoData.data[index].index).frame(height: 30)
                     }
                     else {
-                        Text(photoData.data[index].index).frame(height: 30)
+                        NewTextField(.constant(NSLocalizedString("newName", comment: "")), text: self.$newName, updateNow: self.$updateNow).frame(height: 30)
                     }
                 }
                 Spacer()

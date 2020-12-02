@@ -5,3 +5,19 @@
   Created by wqh on 2020/11/26.
   
 */
+done = "Done";
+edit = "Edit";
+template = "Template";
+name = "Name";
+newName = "New name";
+nvTitle = "My Albums";
+new = "New Album";
+save = "Save";
+import = "Import...";
+drag = "Drag and drop to sort photos.";
+delete = "Long press to delete";
+cancel = "Long press checkmark to cancel name editing.";
+used = "This album name was already used!";
+widgetName = "Album Widget";
+widgetDiscription = "This widget shows photos from your customized album in order.";
+noContent = "There's no photo in the album ";

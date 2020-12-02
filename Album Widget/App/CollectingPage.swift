@@ -52,7 +52,7 @@ struct CollectingPage: View {
                                     VStack {
                                         ZStack {
                                             Rectangle().foregroundColor(Color("normal")).opacity(0.8).frame(height: 30)
-                                            Text("Import...")
+                                            Text(NSLocalizedString("import", comment: ""))
                                         }
                                         Spacer()
                                     }
@@ -68,11 +68,11 @@ struct CollectingPage: View {
                         self.isEditing.toggle()
                     }
                 }) {
-                    Text(self.isEditing ? "Done":"Edit")
+                    Text(self.isEditing ? NSLocalizedString("done", comment: ""):NSLocalizedString("edit", comment: ""))
                 })
             }.navigationBarTitle(self.photoData.data[index].index)
         }.alert(isPresented: self.$showAlert) {
-            Alert(title: Text("Tips"), message: Text("Drag and drop to sort photos."), dismissButton: .default(Text("Dismiss")))
+            Alert(title: Text("Tips"), message: Text(NSLocalizedString("drag", comment: "")), dismissButton: .default(Text("Dismiss")))
         }
     }
 }

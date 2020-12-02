@@ -42,10 +42,10 @@ struct ContentView: View {
                                             ZStack {
                                                 Rectangle().foregroundColor(Color("normal")).frame(height: 30).opacity(0.8)
                                                 if self.isEditing {
-                                                    NewTextField(.constant("Name"), text: self.$albumName, updateNow: self.$updateNName).frame(height: 30)
+                                                    NewTextField(.constant(NSLocalizedString("name", comment: "")), text: self.$albumName, updateNow: self.$updateNName).frame(height: 30)
                                                 }
                                                 else {
-                                                    Text("New Album")
+                                                    Text(NSLocalizedString("new", comment: ""))
                                                 }
                                             }
                                             Spacer()
@@ -79,14 +79,14 @@ struct ContentView: View {
                             
                         }
                         .frame(width: geo.size.width)
-                        .padding().navigationBarTitle(Text("My Albums")).navigationBarItems(trailing:
+                        .padding().navigationBarTitle(Text(NSLocalizedString("nvTitle", comment: ""))).navigationBarItems(trailing:
                         HStack {
                             Button(action: {
                                 withAnimation(.easeInOut(duration: 0.3)) {
                                     self.showTools = !self.showTools
                                 }
                             }) {
-                                Text(self.showTools ? "Done":"Edit").padding(showTools ? 0:2)
+                                Text(self.showTools ? NSLocalizedString("done", comment: ""):NSLocalizedString("edit", comment: ""))
                             }
                             if isSaving {
                                 ProgressView().progressViewStyle(CircularProgressViewStyle()).padding()
@@ -100,7 +100,7 @@ struct ContentView: View {
                                         isSaving = false
                                     }
                                 }) {
-                                    Text("Save")
+                                    Text(NSLocalizedString("save", comment: ""))
                                 }
                             }
                         }

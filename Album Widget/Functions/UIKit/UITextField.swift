@@ -19,10 +19,12 @@ struct NewTextField: UIViewRepresentable {
     @Binding var updateNow: Bool
     @Binding var isDisabled: Bool?
     @Binding var text: String
+    var isEditing: Binding<Bool>?
     
-    init(_ placeholder: Binding<String>, text: Binding<String>, updateNow: Binding<Bool> = .constant(false), isSecure: Binding<Bool> = .constant(false), isDisabled: Binding<Bool?> = .constant(nil), textLimit:Int? = nil, font: UIFont? = nil, fontColor: UIColor? = nil, style: UITextField.BorderStyle = .none, cleanField: Bool = false, keyboardType: UIKeyboardType = .default) {
+    init(_ placeholder: Binding<String>, text: Binding<String>, isEditing: Binding<Bool>? = nil, updateNow: Binding<Bool> = .constant(false), isSecure: Binding<Bool> = .constant(false), isDisabled: Binding<Bool?> = .constant(nil), textLimit:Int? = nil, font: UIFont? = nil, fontColor: UIColor? = nil, style: UITextField.BorderStyle = .none, cleanField: Bool = false, keyboardType: UIKeyboardType = .default) {
         self._placeholder = placeholder
         self._text = text
+        self.isEditing = isEditing
         self.font = font
         self.borderStyle = style
         self.cleanField = cleanField

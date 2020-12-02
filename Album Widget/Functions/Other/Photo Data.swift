@@ -15,7 +15,7 @@ class PhotoData: ObservableObject {
     @Published var Photo: [[photo]] = []
     var count = 0
     
-    init() { _ = self.append(data: pData(id: 0, index: "Template")) }
+    init() { _ = self.append(data: pData(id: 0, index: NSLocalizedString("template", comment: ""))) }
     init?(path: URL, photourl: URL = photoPath) {
         let range = try? String(contentsOf: defaultPath.appendingPathComponent("range")
                                 , encoding: .utf8)
@@ -25,8 +25,9 @@ class PhotoData: ObservableObject {
             let name = try? String(contentsOf: defaultPath.appendingPathComponent("photoConfig\(index)")
                               , encoding: .utf8)
             let cover = try? Data(contentsOf: defaultPath.appendingPathComponent("cover\(index)"))
-            if name == nil || cover == nil { return nil }
-            data.append(pData(id: index, index: name!, cover: UIImage(data: cover!)))
+            if name == nil { return nil }
+            if cover == nil { data.append(pData(id: index, index: name!)) }
+            else { data.append(pData(id: index, index: name!, cover: UIImage(data: cover!))) }
             var tmpPhoto: [photo] = []
             let rge = try? String(contentsOf: defaultPath.appendingPathComponent("range\(index)")
                                   , encoding: .utf8)
@@ -38,6 +39,7 @@ class PhotoData: ObservableObject {
             }
             self.Photo.append(tmpPhoto)
         }
+        count = self.data.count
 //        print(self.data)
     }
     
@@ -136,7 +138,7 @@ class PhotoData: ObservableObject {
     
     private func checkIfReuse(_ newName: String) -> NSError? {
         for name in self.data {
-            if name.index == newName && !name.isDeleted { return NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey:"This album name was already used!"])}
+            if name.index == newName && !name.isDeleted { return NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey:NSLocalizedString("used", comment: "")])}
         }
         return nil
     }
