@@ -18,6 +18,7 @@ drag = "拖拽以排序";
 delete = "长按以删除";
 cancel = "长按对勾以撤销更改";
 used = "此相册名已使用";
+emptyName = "名称不能为空";
 widgetName = "相册挂件";
 widgetDiscription = "此挂件将按顺序展示您自定义相册内的照片";
 noContent = "无照片的相册";

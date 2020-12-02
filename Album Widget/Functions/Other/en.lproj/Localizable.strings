@@ -18,6 +18,7 @@ drag = "Drag and drop to sort photos.";
 delete = "Long press to delete";
 cancel = "Long press checkmark to cancel name editing.";
 used = "This album name was already used!";
+emptyName = "Name cannot be empty!";
 widgetName = "Album Widget";
 widgetDiscription = "This widget shows photos from your customized album in order.";
 noContent = "There's no photo in the album ";

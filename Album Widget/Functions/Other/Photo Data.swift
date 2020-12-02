@@ -91,7 +91,7 @@ class PhotoData: ObservableObject {
     }
     
     func append(data: pData, photos: [photo] = [], path: URL = defaultPath) -> NSError? {
-        if data.index == "" { return NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey:"Name cannot be empty!"]) }
+        if data.index == "" { return NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey:NSLocalizedString("emptyName", comment: "")]) }
         if let error = checkIfReuse(data.index) { return error }
         withAnimation(.easeInOut(duration: 0.3)) {
             self.data.append(pData(id: count, index: data.index, isDeleted: data.isDeleted))
@@ -112,7 +112,7 @@ class PhotoData: ObservableObject {
     func rename(at id: Int, newName: String) -> NSError? {
         if newName == data[id].index { return save() }
         if let error = checkIfReuse(newName) { return error }
-        if newName == "" { return NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey:"Name cannot be empty!"]) }
+        if newName == "" { return NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey:NSLocalizedString("emptyName", comment: "")]) }
         data[id].index = newName
         return nil
     }
