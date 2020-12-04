@@ -12,7 +12,7 @@ struct PhotoPicker: UIViewControllerRepresentable {
     @EnvironmentObject var photoData: PhotoData
     @State var index: Int
     func makeUIViewController(context: Context) -> PHPickerViewController {
-        requestPermission()
+//        requestPermission()
         var config = PHPickerConfiguration()
         config.selectionLimit = 100
         config.filter = .images
@@ -51,13 +51,6 @@ struct PhotoPicker: UIViewControllerRepresentable {
                         }
                     }
                 }
-            }
-        }
-    }
-    private func requestPermission() {
-        PHPhotoLibrary.requestAuthorization() { status in
-            if status == .authorized {
-                return
             }
         }
     }
