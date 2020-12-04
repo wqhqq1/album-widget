@@ -15,7 +15,12 @@ class PhotoData: ObservableObject {
     @Published var Photo: [[photo]] = []
     var count = 0
     
-    init() { _ = self.append(data: pData(id: 0, index: NSLocalizedString("template", comment: ""))) }
+    init() {
+        _ = self.append(data: pData(id: 0, index: NSLocalizedString("template", comment: "")))
+        if let data = UIImage(named: "Template") {
+            _ = self.appendPhoto(at: 0, photos: photo(data: data))
+        }
+    }
     init?(path: URL, photourl: URL = photoPath) {
         let range = try? String(contentsOf: defaultPath.appendingPathComponent("range")
                                 , encoding: .utf8)
