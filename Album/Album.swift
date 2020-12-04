@@ -15,7 +15,12 @@ struct Provider: IntentTimelineProvider {
     }
 
     func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date())
+        var entry = SimpleEntry(date: Date())
+        let data = PhotoData()
+        let photo = data.getData(in: 0, at: 0) as? Data
+        if let photo = photo {
+            entry = SimpleEntry(date: Date(), photo: photo)
+        }
         completion(entry)
     }
 
