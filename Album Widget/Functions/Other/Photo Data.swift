@@ -40,7 +40,7 @@ class PhotoData: ObservableObject {
             let rgeInt = Int(rge!)!
             for idx in 0..<rgeInt {
                 let pho = try? Data(contentsOf: defaultPath.appendingPathComponent("photo\(index).\(idx)"))
-                tmpPhoto.append(photo(id: idx, data: UIImage(data: pho!)!))
+                tmpPhoto.append(photo(data: UIImage(data: pho!)!))
             }
             self.Photo.append(tmpPhoto)
         }
@@ -166,7 +166,7 @@ class PhotoData: ObservableObject {
 }
 
 struct photo: Identifiable, Equatable {
-    var id: Int = 0
+    var id: UUID = UUID()
     var data: UIImage
     var isDeleted = false
 }

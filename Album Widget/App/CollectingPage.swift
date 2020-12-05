@@ -29,7 +29,7 @@ struct CollectingPage: View {
                         if self.photoData.Photo[index].count != 0 {
                             ForEach(self.photoData.Photo[index]) { p in
                                 if !p.isDeleted {
-                                    SinglePhotoView(index: self.index, idInt: p.id, data: p.data, showTools: self.$isEditing).frame(width: 100, height: 150)
+                                    SinglePhotoView(index: self.index, id: p.id, data: p.data, showTools: self.$isEditing).frame(width: 100, height: 150)
                                         .onDrag {
                                             self.dragging = p
                                             return NSItemProvider(object: "\(p.id)" as NSString)

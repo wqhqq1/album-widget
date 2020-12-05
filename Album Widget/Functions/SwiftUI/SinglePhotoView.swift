@@ -10,10 +10,18 @@ import SwiftUI
 struct SinglePhotoView: View {
     @EnvironmentObject var photoData: PhotoData
     @State var index: Int
-    @State var idInt: Int
+    @State var id: UUID
+    @State var idInt: Int = 0
     @State var data: UIImage
     @Binding var showTools: Bool
     var body: some View {
+        DispatchQueue.main.async {
+            for (index, item) in photoData.Photo[index].enumerated() {
+                if item.id == id {
+                    self.idInt = index
+                }
+            }
+        }
         return ZStack {
             Image(uiImage: self.data).resizable().frame(width: 100, height: 150).scaledToFill()
             if self.showTools {
