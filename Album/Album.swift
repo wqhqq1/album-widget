@@ -11,7 +11,7 @@ import Intents
 
 struct Provider: IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date())
+        SimpleEntry(date: Date(), displayStr: NSLocalizedString("noContent", comment: ""))
     }
 
     func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
@@ -37,12 +37,13 @@ struct Provider: IntentTimelineProvider {
         var idxInt = Int(idx ?? "0")!
         if rangeInt == 0 {
             print("empty")
-            entry = SimpleEntry(date: currentDate, album: configuration.Album?.name ?? "")
+            entry = SimpleEntry(date: currentDate,
+                                displayStr: "\(NSLocalizedString("noContent", comment: ""))(\(configuration.Album?.displayString ?? ""))")
         } else {
             if idxInt >= rangeInt { idxInt = 0 }
             let photo = data.getData(in: album, at: idxInt) as! Data
-            let name = data.getData(in: album, at: nil) as! String
-            entry = SimpleEntry(date: currentDate, photo: photo, album: name)
+//            let name = data.getData(in: album, at: nil) as! String
+            entry = SimpleEntry(date: currentDate, photo: photo, displayStr: "")
             try! "\(idxInt + 1)".write(to: defaultPath.appendingPathComponent("idx")
                               , atomically: true, encoding: .utf8)
         }
@@ -56,7 +57,7 @@ struct Provider: IntentTimelineProvider {
 struct SimpleEntry: TimelineEntry {
     let date: Date
     var photo: Data? = nil
-    var album: String = ""
+    var displayStr: String = ""
 }
 
 struct AlbumWidgetEntryView : View {
@@ -64,7 +65,7 @@ struct AlbumWidgetEntryView : View {
 
     var body: some View {
         ZStack {
-            Text("\(NSLocalizedString("noContent", comment: ""))(\(entry.album))")
+            Text(entry.displayStr)
             if let photo = entry.photo {
                 Image(uiImage: UIImage(data: photo)!).resizable().scaledToFill()
             }
