@@ -78,6 +78,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func sendNotification() {
+        print("sending")
         let nContent = UNMutableNotificationContent()
         nContent.title = NSLocalizedString("widgetName", comment: "")
         nContent.body = NSLocalizedString("refresh", comment: "")

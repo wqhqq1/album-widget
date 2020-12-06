@@ -18,6 +18,7 @@ struct SingleAlbumView: View {
     @State var showAlert: Bool = false
     @State var editingName: Bool = false
     @State var updateNow = false
+    @State var isMac = false
     var body: some View {
         DispatchQueue.main.async {
             if self.editingName {
@@ -27,6 +28,11 @@ struct SingleAlbumView: View {
             if !self.showTools {
                 self.editingName = false
             }
+            #if targetEnvironment(macCatalyst)
+            do {
+                self.editingName = true
+            }
+            #endif
         }
         return ZStack {
             NavigationLink(destination: CollectingPage(index: self.index).environmentObject(self.photoData)) {
@@ -70,11 +76,16 @@ struct SingleAlbumView: View {
     //                                print(self.newName)
                                     if let error = self.photoData.rename(at: self.index, newName: self.newName)
                                     { self.message = error.localizedDescription;self.showAlert = true } else {
-                                        self.newName = "";self.updateNow = true;self.editingName = false
+                                        self.newName = "";self.updateNow = true
+                                        if !isMac {
+                                            self.editingName = false
+                                        }
                                     }
                                 }
                                 .onLongPressGesture {
-                                    self.editingName = false
+                                    if !isMac {
+                                        self.editingName = false
+                                    }
                                 }
                         }.padding()
                     }

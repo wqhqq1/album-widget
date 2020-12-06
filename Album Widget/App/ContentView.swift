@@ -17,8 +17,17 @@ struct ContentView: View {
     @State var showError = false
     @State var updateNName = false
     @State var isSaving = false
+    @State var isMac = false
     var body: some View {
-        GeometryReader { geo in
+        DispatchQueue.main.async {
+            #if targetEnvironment(macCatalyst)
+            do {
+                self.isEditing = true
+                self.isMac = true
+            }
+            #endif
+        }
+        return GeometryReader { geo in
             NavigationView {
                 VStack {
                     ScrollView {
@@ -56,7 +65,9 @@ struct ContentView: View {
                                                     HStack {
                                                         Image(systemName: "xmark").onTapGesture {
                                                             withAnimation(.easeInOut(duration: 0.3)) {
-                                                                self.isEditing = false
+                                                                if !isMac {
+                                                                    self.isEditing = false
+                                                                }
                                                             }
                                                         }
                                                         Spacer()
@@ -66,7 +77,9 @@ struct ContentView: View {
                                                             self.albumName = ""
                                                             self.updateNName = true
                                                             withAnimation(.easeInOut(duration: 0.3)) {
-                                                                self.isEditing = false
+                                                                if !isMac {
+                                                                    self.isEditing = false
+                                                                }
                                                             }
                                                         }
                                                     }.offset(y: 1).padding([.leading, .trailing])
