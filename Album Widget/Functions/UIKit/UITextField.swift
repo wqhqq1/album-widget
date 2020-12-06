@@ -44,6 +44,7 @@ struct NewTextField: UIViewRepresentable {
         view.textColor = self.fontColor
         view.placeholder = self.placeholder
         view.text = self.text
+        view.textAlignment = .center
         view.borderStyle = self.borderStyle
         view.delegate = context.coordinator
         view.keyboardType = self.keyBoardType
