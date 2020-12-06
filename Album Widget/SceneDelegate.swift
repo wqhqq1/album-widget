@@ -9,11 +9,13 @@ import UIKit
 import SwiftUI
 import Photos
 import WidgetKit
+import UserNotifications
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     @ObservedObject var photoData = PhotoData(path: defaultPath) ?? PhotoData()
+    let notificationDelegate = NotificationDelegate()
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -26,6 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 return
             }
         }
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (_,_)  in }
         let contentView = ContentView().environmentObject(self.photoData)
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
@@ -65,9 +68,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
         _ = self.photoData.save()
-        WidgetCenter.shared.reloadAllTimelines()
+        sendNotification()
     }
     
+    func sendNotification() {
+        let nContent = UNMutableNotificationContent()
+        nContent.title = NSLocalizedString("widgetName", comment: "")
+        nContent.body = NSLocalizedString("refresh", comment: "")
+        nContent.categoryIdentifier = "confirm"
+        nContent.sound = .default
+        let refresh = UNNotificationAction(identifier: "refresh", title: NSLocalizedString("refreshStr", comment: ""), options: .authenticationRequired)
+        let cancel = UNNotificationAction(identifier: "cancel", title: NSLocalizedString("cancel", comment: ""), options: .authenticationRequired)
+        let catagory = UNNotificationCategory(identifier: "confirm", actions: [refresh, cancel], intentIdentifiers: [], options: .customDismissAction)
+        UNUserNotificationCenter.current().setNotificationCategories([catagory])
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        let request = UNNotificationRequest(identifier: "refresh", content: nContent, trigger: trigger)
+        let centre = UNUserNotificationCenter.current()
+        centre.delegate = notificationDelegate
+        centre.add(request, withCompletionHandler: nil)
+    }
 
 }
 

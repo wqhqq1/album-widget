@@ -12,15 +12,31 @@
 		<key>AlbumExtension.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<key>AlbumIntent.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict/>
+	<dict>
+		<key>08615F93256A484F00CB5A5F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>08615FAF256A48D000CB5A5F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>08E8F8302562659F00D64729</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
 </dict>
 </plist>
