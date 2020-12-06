@@ -45,7 +45,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Release any resources associated with this scene that can be re-created the next time the scene connects.
         // The scene may re-connect later, as its session was not necessarily discarded (see `application:didDiscardSceneSessions` instead).
         _ = self.photoData.save()
-        WidgetCenter.shared.reloadAllTimelines()
+        #if targetEnvironment(macCatalyst)
+        do {
+            WidgetCenter.shared.reloadAllTimelines()
+            return
+        }
+        #endif
+        sendNotification()
     }
 
     func sceneDidBecomeActive(_ scene: UIScene) {
