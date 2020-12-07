@@ -31,6 +31,7 @@ struct SingleAlbumView: View {
             #if targetEnvironment(macCatalyst)
             do {
                 self.editingName = true
+                self.isMac = true
             }
             #endif
         }
@@ -85,6 +86,9 @@ struct SingleAlbumView: View {
                                 .onLongPressGesture {
                                     if !isMac {
                                         self.editingName = false
+                                    } else {
+                                        self.showTools = false
+                                        print(showTools)
                                     }
                                 }
                         }.padding()

@@ -25,11 +25,6 @@
 		08A539DA2577B29900FB0DD8 /* Album.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 08A539DD2577B29900FB0DD8 /* Album.intentdefinition */; };
 		08A539DB2577B29900FB0DD8 /* Album.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 08A539DD2577B29900FB0DD8 /* Album.intentdefinition */; };
 		08BC37262568E54400D9A89D /* PhotoDropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BC37252568E54400D9A89D /* PhotoDropDelegate.swift */; };
-		08C39B05257C9FDF0016C08A /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08848ABB257B874A00F52894 /* UserNotifications.framework */; };
-		08C39B06257C9FDF0016C08A /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08848ABD257B874A00F52894 /* UserNotificationsUI.framework */; };
-		08C39B09257C9FDF0016C08A /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C39B08257C9FDF0016C08A /* NotificationViewController.swift */; };
-		08C39B0C257C9FDF0016C08A /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08C39B0A257C9FDF0016C08A /* MainInterface.storyboard */; };
-		08E1038C257CD02D0003F98D /* Confirm.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 08C39B04257C9FDF0016C08A /* Confirm.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		08E23478257BB5F600820A02 /* NotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E23477257BB5F600820A02 /* NotificationDelegate.swift */; };
 		08E8F835256265A000D64729 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E8F834256265A000D64729 /* AppDelegate.swift */; };
 		08E8F837256265A000D64729 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E8F836256265A000D64729 /* SceneDelegate.swift */; };
@@ -60,13 +55,6 @@
 			remoteGlobalIDString = 08615FAF256A48D000CB5A5F;
 			remoteInfo = AlbumIntent;
 		};
-		08E1038D257CD02D0003F98D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 08E8F8292562659F00D64729 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 08C39B03257C9FDF0016C08A;
-			remoteInfo = Confirm;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -78,7 +66,6 @@
 			files = (
 				08615FB7256A48D000CB5A5F /* AlbumIntent.appex in Embed App Extensions */,
 				08615FA2256A485200CB5A5F /* AlbumExtension.appex in Embed App Extensions */,
-				08E1038C257CD02D0003F98D /* Confirm.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,11 +93,6 @@
 		08A539D52577B14100FB0DD8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		08A539E62577B2A200FB0DD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Base; path = Base.lproj/Album.intentdefinition; sourceTree = "<group>"; };
 		08BC37252568E54400D9A89D /* PhotoDropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDropDelegate.swift; sourceTree = "<group>"; };
-		08C39B04257C9FDF0016C08A /* Confirm.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Confirm.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		08C39B08257C9FDF0016C08A /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
-		08C39B0B257C9FDF0016C08A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		08C39B0D257C9FDF0016C08A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		08C39B18257CA18C0016C08A /* Confirm.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Confirm.entitlements; sourceTree = "<group>"; };
 		08E23477257BB5F600820A02 /* NotificationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDelegate.swift; sourceTree = "<group>"; };
 		08E8F831256265A000D64729 /* Album Widget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Album Widget.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08E8F834256265A000D64729 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -146,15 +128,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		08C39B01257C9FDF0016C08A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				08C39B06257C9FDF0016C08A /* UserNotificationsUI.framework in Frameworks */,
-				08C39B05257C9FDF0016C08A /* UserNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,17 +192,6 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
-		08C39B07257C9FDF0016C08A /* Confirm */ = {
-			isa = PBXGroup;
-			children = (
-				08C39B18257CA18C0016C08A /* Confirm.entitlements */,
-				08C39B08257C9FDF0016C08A /* NotificationViewController.swift */,
-				08C39B0A257C9FDF0016C08A /* MainInterface.storyboard */,
-				08C39B0D257C9FDF0016C08A /* Info.plist */,
-			);
-			path = Confirm;
-			sourceTree = "<group>";
-		};
 		08E8F8282562659F00D64729 = {
 			isa = PBXGroup;
 			children = (
@@ -238,7 +200,6 @@
 				08E8F833256265A000D64729 /* Album Widget */,
 				08615F97256A484F00CB5A5F /* Album */,
 				08615FB1256A48D000CB5A5F /* AlbumIntent */,
-				08C39B07257C9FDF0016C08A /* Confirm */,
 				08EFCE652569186E00D7AE84 /* Frameworks */,
 				08E8F832256265A000D64729 /* Products */,
 			);
@@ -250,7 +211,6 @@
 				08E8F831256265A000D64729 /* Album Widget.app */,
 				08615F94256A484F00CB5A5F /* AlbumExtension.appex */,
 				08615FB0256A48D000CB5A5F /* AlbumIntent.appex */,
-				08C39B04257C9FDF0016C08A /* Confirm.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -348,23 +308,6 @@
 			productReference = 08615FB0256A48D000CB5A5F /* AlbumIntent.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		08C39B03257C9FDF0016C08A /* Confirm */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 08C39B13257C9FDF0016C08A /* Build configuration list for PBXNativeTarget "Confirm" */;
-			buildPhases = (
-				08C39B00257C9FDF0016C08A /* Sources */,
-				08C39B01257C9FDF0016C08A /* Frameworks */,
-				08C39B02257C9FDF0016C08A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Confirm;
-			productName = Confirm;
-			productReference = 08C39B04257C9FDF0016C08A /* Confirm.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		08E8F8302562659F00D64729 /* Album Widget */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 08E8F845256265A400D64729 /* Build configuration list for PBXNativeTarget "Album Widget" */;
@@ -379,7 +322,6 @@
 			dependencies = (
 				08615FA1256A485200CB5A5F /* PBXTargetDependency */,
 				08615FB6256A48D000CB5A5F /* PBXTargetDependency */,
-				08E1038E257CD02D0003F98D /* PBXTargetDependency */,
 			);
 			name = "Album Widget";
 			productName = "Album Widget";
@@ -399,9 +341,6 @@
 						CreatedOnToolsVersion = 12.2;
 					};
 					08615FAF256A48D000CB5A5F = {
-						CreatedOnToolsVersion = 12.2;
-					};
-					08C39B03257C9FDF0016C08A = {
 						CreatedOnToolsVersion = 12.2;
 					};
 					08E8F8302562659F00D64729 = {
@@ -426,7 +365,6 @@
 				08E8F8302562659F00D64729 /* Album Widget */,
 				08615F93256A484F00CB5A5F /* AlbumExtension */,
 				08615FAF256A48D000CB5A5F /* AlbumIntent */,
-				08C39B03257C9FDF0016C08A /* Confirm */,
 			);
 		};
 /* End PBXProject section */
@@ -446,14 +384,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				08A279B5256F1BE900E56A00 /* Localizable.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		08C39B02257C9FDF0016C08A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				08C39B0C257C9FDF0016C08A /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,14 +422,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		08C39B00257C9FDF0016C08A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				08C39B09257C9FDF0016C08A /* NotificationViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		08E8F82D2562659F00D64729 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -533,12 +455,6 @@
 			target = 08615FAF256A48D000CB5A5F /* AlbumIntent */;
 			targetProxy = 08615FB5256A48D000CB5A5F /* PBXContainerItemProxy */;
 		};
-		08E1038E257CD02D0003F98D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			platformFilter = ios;
-			target = 08C39B03257C9FDF0016C08A /* Confirm */;
-			targetProxy = 08E1038D257CD02D0003F98D /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -567,14 +483,6 @@
 				08A539E62577B2A200FB0DD8 /* Base */,
 			);
 			name = Album.intentdefinition;
-			sourceTree = "<group>";
-		};
-		08C39B0A257C9FDF0016C08A /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				08C39B0B257C9FDF0016C08A /* Base */,
-			);
-			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 		08E8F83F256265A400D64729 /* LaunchScreen.storyboard */ = {
@@ -710,60 +618,6 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,6";
-			};
-			name = Release;
-		};
-		08C39B11257C9FDF0016C08A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = Confirm/Confirm.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 50;
-				DEVELOPMENT_TEAM = 6T6JMWY77X;
-				INFOPLIST_FILE = Confirm/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = "1.0-rc";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wqhqq1.Album-Widget.Confirm";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		08C39B12257C9FDF0016C08A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = Confirm/Confirm.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 50;
-				DEVELOPMENT_TEAM = 6T6JMWY77X;
-				INFOPLIST_FILE = Confirm/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = "1.0-rc";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wqhqq1.Album-Widget.Confirm";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -968,15 +822,6 @@
 			buildConfigurations = (
 				08615FBA256A48D000CB5A5F /* Debug */,
 				08615FBB256A48D000CB5A5F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		08C39B13257C9FDF0016C08A /* Build configuration list for PBXNativeTarget "Confirm" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				08C39B11257C9FDF0016C08A /* Debug */,
-				08C39B12257C9FDF0016C08A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
