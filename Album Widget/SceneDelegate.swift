@@ -23,20 +23,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
         // Create the SwiftUI view that provides the window contents.
-        PHPhotoLibrary.requestAuthorization() { status in
-            if status == .authorized {
-                return
-            }
-        }
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (_,_)  in }
-        let contentView = ContentView().environmentObject(self.photoData)
-        // Use a UIHostingController as window root view controller.
-        if let windowScene = scene as? UIWindowScene {
-            let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: contentView)
-            self.window = window
-            window.makeKeyAndVisible()
-        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -45,13 +31,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Release any resources associated with this scene that can be re-created the next time the scene connects.
         // The scene may re-connect later, as its session was not necessarily discarded (see `application:didDiscardSceneSessions` instead).
         _ = self.photoData.save()
-        #if targetEnvironment(macCatalyst)
-        do {
-            WidgetCenter.shared.reloadAllTimelines()
-            return
-        }
-        #endif
-        sendNotification()
+        WidgetCenter.shared.reloadAllTimelines()
     }
 
     func sceneDidBecomeActive(_ scene: UIScene) {
@@ -74,25 +54,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
         _ = self.photoData.save()
-        sendNotification()
-    }
-    
-    func sendNotification() {
-        print("sending")
-        let nContent = UNMutableNotificationContent()
-        nContent.title = NSLocalizedString("widgetName", comment: "")
-        nContent.body = NSLocalizedString("refresh", comment: "")
-        nContent.categoryIdentifier = "confirm"
-        nContent.sound = .default
-        let refresh = UNNotificationAction(identifier: "refresh", title: NSLocalizedString("refreshStr", comment: ""), options: .authenticationRequired)
-        let cancel = UNNotificationAction(identifier: "cancel", title: NSLocalizedString("cancel", comment: ""), options: .authenticationRequired)
-        let catagory = UNNotificationCategory(identifier: "confirm", actions: [refresh, cancel], intentIdentifiers: [], options: .customDismissAction)
-        UNUserNotificationCenter.current().setNotificationCategories([catagory])
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
-        let request = UNNotificationRequest(identifier: "refresh", content: nContent, trigger: trigger)
-        let centre = UNUserNotificationCenter.current()
-        centre.delegate = notificationDelegate
-        centre.add(request, withCompletionHandler: nil)
+        WidgetCenter.shared.reloadAllTimelines()
     }
 
 }
