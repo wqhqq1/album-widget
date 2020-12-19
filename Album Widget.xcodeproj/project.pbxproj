@@ -25,6 +25,8 @@
 		08A539DA2577B29900FB0DD8 /* Album.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 08A539DD2577B29900FB0DD8 /* Album.intentdefinition */; };
 		08A539DB2577B29900FB0DD8 /* Album.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 08A539DD2577B29900FB0DD8 /* Album.intentdefinition */; };
 		08BC37262568E54400D9A89D /* PhotoDropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BC37252568E54400D9A89D /* PhotoDropDelegate.swift */; };
+		08E0B535258DE0B7004145B3 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E0B534258DE0B7004145B3 /* Random.swift */; };
+		08E0B53D258DE3C4004145B3 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E0B534258DE0B7004145B3 /* Random.swift */; };
 		08E23478257BB5F600820A02 /* NotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E23477257BB5F600820A02 /* NotificationDelegate.swift */; };
 		08E8F835256265A000D64729 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E8F834256265A000D64729 /* AppDelegate.swift */; };
 		08E8F837256265A000D64729 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E8F836256265A000D64729 /* SceneDelegate.swift */; };
@@ -93,6 +95,7 @@
 		08A539D52577B14100FB0DD8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		08A539E62577B2A200FB0DD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Base; path = Base.lproj/Album.intentdefinition; sourceTree = "<group>"; };
 		08BC37252568E54400D9A89D /* PhotoDropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDropDelegate.swift; sourceTree = "<group>"; };
+		08E0B534258DE0B7004145B3 /* Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
 		08E23477257BB5F600820A02 /* NotificationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDelegate.swift; sourceTree = "<group>"; };
 		08E8F831256265A000D64729 /* Album Widget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Album Widget.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08E8F834256265A000D64729 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -188,6 +191,7 @@
 			children = (
 				08A279B7256F1BE900E56A00 /* Localizable.strings */,
 				08E8F84B2562663500D64729 /* Photo Data.swift */,
+				08E0B534258DE0B7004145B3 /* Random.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -406,6 +410,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08E0B53D258DE3C4004145B3 /* Random.swift in Sources */,
 				08615FA9256A485C00CB5A5F /* Photo Data.swift in Sources */,
 				08A539DA2577B29900FB0DD8 /* Album.intentdefinition in Sources */,
 				08615F99256A484F00CB5A5F /* Album.swift in Sources */,
@@ -432,6 +437,7 @@
 				08BC37262568E54400D9A89D /* PhotoDropDelegate.swift in Sources */,
 				08E8F84C2562663500D64729 /* Photo Data.swift in Sources */,
 				08E8F85F2563B02F00D64729 /* PhotoPicker.swift in Sources */,
+				08E0B535258DE0B7004145B3 /* Random.swift in Sources */,
 				08E8F85C2563AAC800D64729 /* OrigButtonStyle.swift in Sources */,
 				08E23478257BB5F600820A02 /* NotificationDelegate.swift in Sources */,
 				08E8F8522562701D00D64729 /* SingleAlbumView.swift in Sources */,

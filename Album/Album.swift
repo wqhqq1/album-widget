@@ -17,7 +17,9 @@ struct Provider: IntentTimelineProvider {
     func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
         var entry = SimpleEntry(date: Date())
         let data = PhotoData()
-        let photo = data.getData(in: 0, at: 0) as? Data
+        let albumIndex = (0..<Int(try! String(contentsOf: defaultPath.appendingPathComponent("range"), encoding: .utf8))!).random
+        let photoIndex = (0..<Int(try! String(contentsOf: defaultPath.appendingPathComponent("range\(albumIndex)"), encoding: .utf8))!).random
+        let photo = data.getData(in: albumIndex, at: photoIndex) as? Data
         if let photo = photo {
             entry = SimpleEntry(date: Date(), photo: photo)
         }
