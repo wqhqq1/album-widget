@@ -92,7 +92,8 @@ struct ContentView: View {
                             
                         }
                         .frame(width: geo.size.width)
-                        .padding().navigationBarTitle(Text(NSLocalizedString("nvTitle", comment: ""))).navigationBarItems(trailing:
+                        .padding().navigationBarTitle(Text(NSLocalizedString("nvTitle", comment: "")))
+                        .navigationBarItems(leading: AutoRefreshToggle(), trailing:
                         HStack {
                             Button(action: {
                                 withAnimation(.easeInOut(duration: 0.3)) {

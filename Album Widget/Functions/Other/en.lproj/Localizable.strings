@@ -25,3 +25,4 @@ cancel = "Cancel";
 widgetName = "Album Widget";
 widgetDiscription = "This widget shows photos from your customized album in order.";
 noContent = "There's no photo in the album ";
+autoRefresh = "AutoRefresh";

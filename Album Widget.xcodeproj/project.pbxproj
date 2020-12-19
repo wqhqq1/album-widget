@@ -17,6 +17,7 @@
 		08615FB3256A48D000CB5A5F /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08615FB2256A48D000CB5A5F /* IntentHandler.swift */; };
 		08615FB7256A48D000CB5A5F /* AlbumIntent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 08615FB0256A48D000CB5A5F /* AlbumIntent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		08615FC3256A48E000CB5A5F /* Photo Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E8F84B2562663500D64729 /* Photo Data.swift */; };
+		0886B6B8258DEF8C003EC7A6 /* AutoRefreshToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0886B6B7258DEF8C003EC7A6 /* AutoRefreshToggle.swift */; };
 		08A279B3256F1BE900E56A00 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08A279B7256F1BE900E56A00 /* Localizable.strings */; };
 		08A279B4256F1BE900E56A00 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08A279B7256F1BE900E56A00 /* Localizable.strings */; };
 		08A279B5256F1BE900E56A00 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08A279B7256F1BE900E56A00 /* Localizable.strings */; };
@@ -88,6 +89,7 @@
 		08615FB8256A48D000CB5A5F /* AlbumIntent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AlbumIntent.entitlements; sourceTree = "<group>"; };
 		08848ABB257B874A00F52894 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		08848ABD257B874A00F52894 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		0886B6B7258DEF8C003EC7A6 /* AutoRefreshToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoRefreshToggle.swift; sourceTree = "<group>"; };
 		08A279B2256F1BD000E56A00 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		08A279B6256F1BE900E56A00 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		08A279BB256F1BEB00E56A00 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				08E8F85B2563AAC800D64729 /* OrigButtonStyle.swift */,
 				083EAD2C25651350007E2F49 /* SinglePhotoView.swift */,
 				08BC37252568E54400D9A89D /* PhotoDropDelegate.swift */,
+				0886B6B7258DEF8C003EC7A6 /* AutoRefreshToggle.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 				08E8F85625638B3F00D64729 /* ContentView.swift in Sources */,
 				08E8F837256265A000D64729 /* SceneDelegate.swift in Sources */,
 				08BC37262568E54400D9A89D /* PhotoDropDelegate.swift in Sources */,
+				0886B6B8258DEF8C003EC7A6 /* AutoRefreshToggle.swift in Sources */,
 				08E8F84C2562663500D64729 /* Photo Data.swift in Sources */,
 				08E8F85F2563B02F00D64729 /* PhotoPicker.swift in Sources */,
 				08E0B535258DE0B7004145B3 /* Random.swift in Sources */,

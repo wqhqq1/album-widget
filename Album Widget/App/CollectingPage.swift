@@ -63,7 +63,7 @@ struct CollectingPage: View {
                         PhotoPicker(index: self.index).environmentObject(self.photoData)
                     }
                 }
-                Spacer().navigationBarItems(trailing: Button(action: {
+                Spacer().navigationBarItems(leading: AutoRefreshToggle(), trailing: Button(action: {
                     withAnimation(.easeInOut(duration: 0.3)) {
                         self.isEditing.toggle()
                     }

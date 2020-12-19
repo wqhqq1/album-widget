@@ -25,3 +25,4 @@ cancel = "取消";
 widgetName = "相册挂件";
 widgetDiscription = "此挂件将按顺序展示您自定义相册内的照片";
 noContent = "无照片的相册";
+autoRefresh = "自动刷新";
