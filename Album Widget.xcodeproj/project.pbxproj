@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0800678C258E34C1006208FE /* TextToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0800678B258E34C1006208FE /* TextToggleStyle.swift */; };
 		083EAD2D25651350007E2F49 /* SinglePhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083EAD2C25651350007E2F49 /* SinglePhotoView.swift */; };
 		08615F95256A484F00CB5A5F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08EFCE662569186E00D7AE84 /* WidgetKit.framework */; };
 		08615F96256A484F00CB5A5F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08EFCE682569186E00D7AE84 /* SwiftUI.framework */; };
@@ -76,6 +77,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0800678B258E34C1006208FE /* TextToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToggleStyle.swift; sourceTree = "<group>"; };
 		083EAD2C25651350007E2F49 /* SinglePhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePhotoView.swift; sourceTree = "<group>"; };
 		08615F1E256A43DD00CB5A5F /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
 		08615F94256A484F00CB5A5F /* AlbumExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AlbumExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,6 +177,7 @@
 				083EAD2C25651350007E2F49 /* SinglePhotoView.swift */,
 				08BC37252568E54400D9A89D /* PhotoDropDelegate.swift */,
 				0886B6B7258DEF8C003EC7A6 /* AutoRefreshToggle.swift */,
+				0800678B258E34C1006208FE /* TextToggleStyle.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 				08E8F84C2562663500D64729 /* Photo Data.swift in Sources */,
 				08E8F85F2563B02F00D64729 /* PhotoPicker.swift in Sources */,
 				08E0B535258DE0B7004145B3 /* Random.swift in Sources */,
+				0800678C258E34C1006208FE /* TextToggleStyle.swift in Sources */,
 				08E8F85C2563AAC800D64729 /* OrigButtonStyle.swift in Sources */,
 				08E23478257BB5F600820A02 /* NotificationDelegate.swift in Sources */,
 				08E8F8522562701D00D64729 /* SingleAlbumView.swift in Sources */,

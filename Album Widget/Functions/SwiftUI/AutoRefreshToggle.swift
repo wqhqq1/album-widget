@@ -25,6 +25,6 @@ struct AutoRefreshToggle: View {
                 try! String(isOn).write(to: defaultPath.appendingPathComponent("autoRefresh"), atomically: true, encoding: .utf8)
             }
         }
-        return Toggle(NSLocalizedString("autoRefresh", comment: ""), isOn: self.$isOn)
+        return Toggle(NSLocalizedString("autoRefresh", comment: ""), isOn: self.$isOn).toggleStyle(TextToggleStyle())
     }
 }
