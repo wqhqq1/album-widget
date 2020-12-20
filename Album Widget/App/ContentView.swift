@@ -95,6 +95,7 @@ struct ContentView: View {
                         .padding().navigationBarTitle(Text(NSLocalizedString("nvTitle", comment: "")))
                         .navigationBarItems(leading: AutoRefreshToggle(), trailing:
                         HStack {
+                            RefreshTimeCustomizer()
                             Button(action: {
                                 withAnimation(.easeInOut(duration: 0.3)) {
                                     self.showTools = !self.showTools

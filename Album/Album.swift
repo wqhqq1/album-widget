@@ -46,8 +46,11 @@ struct Provider: IntentTimelineProvider {
             try! "\(idxInt + 1)".write(to: defaultPath.appendingPathComponent("idx")
                               , atomically: true, encoding: .utf8)
         }
-
-        let timeline = Timeline(entries: [entry], policy: .after(Calendar.current.date(byAdding: .hour, value: 1
+        var refreshAfter = Int((try? String(contentsOf: defaultPath.appendingPathComponent("refreshTime"), encoding: .utf8)) ?? "1")!
+        if refreshAfter <= 0 || refreshAfter >= 24 {
+            refreshAfter = 1
+        }
+        let timeline = Timeline(entries: [entry], policy: .after(Calendar.current.date(byAdding: .hour, value: refreshAfter
                                                                                        , to: currentDate)!))
         completion(timeline)
     }

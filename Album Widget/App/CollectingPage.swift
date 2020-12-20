@@ -63,13 +63,15 @@ struct CollectingPage: View {
                         PhotoPicker(index: self.index).environmentObject(self.photoData)
                     }
                 }
-                Spacer().navigationBarItems(leading: AutoRefreshToggle(), trailing: Button(action: {
+                Spacer().navigationBarItems(leading: AutoRefreshToggle(), trailing: HStack {
+                    RefreshTimeCustomizer()
+                    Button(action: {
                     withAnimation(.easeInOut(duration: 0.3)) {
                         self.isEditing.toggle()
                     }
                 }) {
                     Text(self.isEditing ? NSLocalizedString("done", comment: ""):NSLocalizedString("edit", comment: ""))
-                })
+                    }})
             }.navigationBarTitle(self.photoData.data[index].index)
         }.alert(isPresented: self.$showAlert) {
             Alert(title: Text("Tips"), message: Text(NSLocalizedString("drag", comment: "")), dismissButton: .default(Text("Dismiss")))

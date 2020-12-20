@@ -27,6 +27,7 @@
 		08A539DA2577B29900FB0DD8 /* Album.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 08A539DD2577B29900FB0DD8 /* Album.intentdefinition */; };
 		08A539DB2577B29900FB0DD8 /* Album.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 08A539DD2577B29900FB0DD8 /* Album.intentdefinition */; };
 		08BC37262568E54400D9A89D /* PhotoDropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BC37252568E54400D9A89D /* PhotoDropDelegate.swift */; };
+		08CCC75D258EE68700815E42 /* RefreshTimeCustomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CCC75C258EE68700815E42 /* RefreshTimeCustomizer.swift */; };
 		08E0B535258DE0B7004145B3 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E0B534258DE0B7004145B3 /* Random.swift */; };
 		08E0B53D258DE3C4004145B3 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E0B534258DE0B7004145B3 /* Random.swift */; };
 		08E23478257BB5F600820A02 /* NotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E23477257BB5F600820A02 /* NotificationDelegate.swift */; };
@@ -99,6 +100,7 @@
 		08A539D52577B14100FB0DD8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		08A539E62577B2A200FB0DD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Base; path = Base.lproj/Album.intentdefinition; sourceTree = "<group>"; };
 		08BC37252568E54400D9A89D /* PhotoDropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDropDelegate.swift; sourceTree = "<group>"; };
+		08CCC75C258EE68700815E42 /* RefreshTimeCustomizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTimeCustomizer.swift; sourceTree = "<group>"; };
 		08E0B534258DE0B7004145B3 /* Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
 		08E23477257BB5F600820A02 /* NotificationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDelegate.swift; sourceTree = "<group>"; };
 		08E8F831256265A000D64729 /* Album Widget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Album Widget.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,6 +180,7 @@
 				08BC37252568E54400D9A89D /* PhotoDropDelegate.swift */,
 				0886B6B7258DEF8C003EC7A6 /* AutoRefreshToggle.swift */,
 				0800678B258E34C1006208FE /* TextToggleStyle.swift */,
+				08CCC75C258EE68700815E42 /* RefreshTimeCustomizer.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				08A539D92577B29900FB0DD8 /* Album.intentdefinition in Sources */,
 				08E8F859256393F700D64729 /* UITextField.swift in Sources */,
 				08EE4C8A2563CAB500A14113 /* CollectingPage.swift in Sources */,
+				08CCC75D258EE68700815E42 /* RefreshTimeCustomizer.swift in Sources */,
 				083EAD2D25651350007E2F49 /* SinglePhotoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
