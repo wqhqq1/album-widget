@@ -21,7 +21,9 @@ struct RefreshTimeCustomizer: View {
             Text(NSLocalizedString("refresh01", comment: ""))
             HStack {
                 Button(action: {
-                    self.refreshTime = String(Int(self.refreshTime)! + 1)
+                    if Int(self.refreshTime)! + 1 <= 24 {
+                        self.refreshTime = String(Int(refreshTime)! + 1)
+                    }
                     try! String(self.refreshTime).write(to: defaultPath.appendingPathComponent("refreshTime")
                                                    , atomically: true, encoding: .utf8)
                 }) {
@@ -30,7 +32,9 @@ struct RefreshTimeCustomizer: View {
                 }
                 Text(String(self.refreshTime))
                 Button(action: {
-                    self.refreshTime = String(Int(self.refreshTime)! - 1)
+                    if Int(self.refreshTime)! - 1 >= 1 {
+                        self.refreshTime = String(Int(self.refreshTime)! - 1)
+                    }
                     try! String(self.refreshTime).write(to: defaultPath.appendingPathComponent("refreshTime")
                                                    , atomically: true, encoding: .utf8)
                 }) {
