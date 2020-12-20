@@ -34,15 +34,12 @@ struct Provider: IntentTimelineProvider {
                                 , encoding: .utf8)
         guard let rge = range else { return }
         let rangeInt = Int(rge)!
-        let idx = try? String(contentsOf: defaultPath.appendingPathComponent("idx")
-                              , encoding: .utf8)
-        var idxInt = Int(idx ?? "0")!
         if rangeInt == 0 {
             print("empty")
             entry = SimpleEntry(date: currentDate,
                                 displayStr: "\(NSLocalizedString("noContent", comment: ""))(\(configuration.Album?.displayString ?? ""))")
         } else {
-            if idxInt >= rangeInt { idxInt = 0 }
+            let idxInt = (0..<rangeInt).random
             let photo = data.getData(in: album, at: idxInt) as! Data
 //            let name = data.getData(in: album, at: nil) as! String
             entry = SimpleEntry(date: currentDate, photo: photo, displayStr: "")
