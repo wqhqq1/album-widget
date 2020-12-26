@@ -17,8 +17,18 @@ struct Provider: IntentTimelineProvider {
     func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
         var entry = SimpleEntry(date: Date())
         let data = PhotoData()
-        let albumIndex = (0..<Int(try! String(contentsOf: defaultPath.appendingPathComponent("range"), encoding: .utf8))!).random
-        let photoIndex = (0..<Int(try! String(contentsOf: defaultPath.appendingPathComponent("range\(albumIndex)"), encoding: .utf8))!).random
+        let albumRange = Int(try! String(contentsOf: defaultPath.appendingPathComponent("range"), encoding: .utf8))!
+        if albumRange == 0 {
+            completion(SimpleEntry(date: Date(), displayStr: "Failed"))
+            return
+        }
+        let albumIndex = (0..<albumRange).random
+        let photoRange = Int(try! String(contentsOf: defaultPath.appendingPathComponent("range\(albumIndex)"), encoding: .utf8))!
+        if photoRange == 0 {
+            completion(SimpleEntry(date: Date(), displayStr: "There's no photo in the album!"))
+            return
+        }
+        let photoIndex = (0..<photoRange).random
         let photo = data.getData(in: albumIndex, at: photoIndex) as? Data
         if let photo = photo {
             entry = SimpleEntry(date: Date(), photo: photo)
@@ -42,7 +52,7 @@ struct Provider: IntentTimelineProvider {
             let idxInt = (0..<rangeInt).random
             let photo = data.getData(in: album, at: idxInt) as! Data
 //            let name = data.getData(in: album, at: nil) as! String
-            entry = SimpleEntry(date: currentDate, photo: photo, displayStr: "")
+            entry = SimpleEntry(date: currentDate, photo: photo, displayStr: configuration.Album?.displayString ?? "")
             try! "\(idxInt + 1)".write(to: defaultPath.appendingPathComponent("idx")
                               , atomically: true, encoding: .utf8)
         }
@@ -66,10 +76,19 @@ struct AlbumWidgetEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        ZStack {
-            Text(entry.displayStr)
-            if let photo = entry.photo {
-                Image(uiImage: UIImage(data: photo)!).resizable().scaledToFill()
+        GeometryReader { geo in
+            ZStack {
+                if let photo = entry.photo {
+                    Image(uiImage: UIImage(data: photo)!).resizable().scaledToFill()
+                        .frame(width: geo.size.width, height: geo.size.height)
+                }
+                VStack {
+                    Spacer()
+                    HStack {
+                        Text(entry.displayStr).font(.title).padding(.leading)
+                        Spacer()
+                    }
+                }
             }
         }
     }
