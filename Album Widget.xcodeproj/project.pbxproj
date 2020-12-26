@@ -45,6 +45,7 @@
 		08E8F85C2563AAC800D64729 /* OrigButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E8F85B2563AAC800D64729 /* OrigButtonStyle.swift */; };
 		08E8F85F2563B02F00D64729 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E8F85E2563B02E00D64729 /* PhotoPicker.swift */; };
 		08EE4C8A2563CAB500A14113 /* CollectingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EE4C892563CAB500A14113 /* CollectingPage.swift */; };
+		08F2BFE82598005F00C9F560 /* CardViewMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F2BFE72598005F00C9F560 /* CardViewMode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,7 @@
 		08EFCE662569186E00D7AE84 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		08EFCE682569186E00D7AE84 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		08EFCE7C2569189C00D7AE84 /* AlbumWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AlbumWidgetExtension.entitlements; sourceTree = "<group>"; };
+		08F2BFE72598005F00C9F560 /* CardViewMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewMode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +266,7 @@
 				08E8F85525638B3F00D64729 /* ContentView.swift */,
 				08B268672596F01D007A019C /* TableViewMode.swift */,
 				08EE4C892563CAB500A14113 /* CollectingPage.swift */,
+				08F2BFE72598005F00C9F560 /* CardViewMode.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 				08EE4C8A2563CAB500A14113 /* CollectingPage.swift in Sources */,
 				08CCC75D258EE68700815E42 /* RefreshTimeCustomizer.swift in Sources */,
 				083EAD2D25651350007E2F49 /* SinglePhotoView.swift in Sources */,
+				08F2BFE82598005F00C9F560 /* CardViewMode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

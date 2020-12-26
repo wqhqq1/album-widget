@@ -27,8 +27,12 @@ struct ContentView: View {
                     TableViewMode(showTools: self.$showTools, isSaving: self.$isSaving)
                         .environmentObject(self.photoData)
                     
+                } else {
+                    CardViewMode(showTools: self.$showTools)
+                        .environmentObject(self.photoData)
                 }
             }
+            .navigationBarTitle(Text(NSLocalizedString("nvTitle", comment: "")))
             .navigationBarItems(leading: HStack{
                 AutoRefreshToggle()
                 ViewModePicker(viewMode: self.$viewMode)

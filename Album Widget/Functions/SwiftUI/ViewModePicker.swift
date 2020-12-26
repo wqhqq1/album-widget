@@ -33,11 +33,11 @@ struct ViewModePicker: View {
                     .frame(width: 70, height: self.height)
                     .cornerRadius(4)
                     .opacity(0.5)
-                    .overlay(Divider())
+                    .overlay(Divider().padding([.top, .bottom], 5))
                 HStack {
                     Rectangle()
                         .foregroundColor(Color("grayWhenDark"))
-                        .frame(width: self.height+5, height: self.height-1)
+                        .frame(width: self.height, height: self.height-1)
                         .cornerRadius(4)
                         .offset(x: self.offset)
                         .foregroundColor(.white)

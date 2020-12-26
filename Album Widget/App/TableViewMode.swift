@@ -91,7 +91,7 @@ struct TableViewMode: View {
                             
                         }
                         .frame(width: geo.size.width)
-                        .padding().navigationBarTitle(Text(NSLocalizedString("nvTitle", comment: "")))
+                        .padding()
                         Text("").frame(width: 0).alert(isPresented: self.$showError) {
                             Alert(title: Text("Fatal Error"), message: Text(self.message), dismissButton: .default(Text("OK")))
                         }
