@@ -12,45 +12,53 @@ struct ContentView: View {
     @State var viewMode: ViewMode = .tableView
     @State var isSaving = false
     @State var showTools = false
+    @State var once = false
     @EnvironmentObject var photoData: PhotoData
     var body: some View {
         DispatchQueue.main.async {
-            self.viewMode = (viewModeConverter(str: UserDefaults.standard.string(forKey: "viewMode")) as? ViewMode) ?? .tableView
-        }
-        return NavigationView {
-            if viewMode == .tableView {
-                TableViewMode(showTools: self.$showTools, isSaving: self.$isSaving)
-                    .environmentObject(self.photoData)
+            if !once {
+                self.viewMode = (viewModeConverter(str: UserDefaults.standard.string(forKey: "viewMode")) as? ViewMode) ?? .tableView
+                once.toggle()
             }
         }
+        return NavigationView {
+            VStack {
+                if viewMode == .tableView {
+                    TableViewMode(showTools: self.$showTools, isSaving: self.$isSaving)
+                        .environmentObject(self.photoData)
+                    
+                }
+            }
+            .navigationBarItems(leading: HStack{
+                AutoRefreshToggle()
+                ViewModePicker(viewMode: self.$viewMode)
+            }, trailing: HStack {
+                RefreshTimeCustomizer()
+                Button(action: {
+                    withAnimation(.easeInOut(duration: 0.3)) {
+                        self.showTools = !self.showTools
+                    }
+                }) {
+                    Text(self.showTools ? NSLocalizedString("done", comment: ""):NSLocalizedString("edit", comment: ""))
+                }
+                if isSaving {
+                    ProgressView().progressViewStyle(CircularProgressViewStyle()).padding()
+                }
+                else {
+                    Button(action: {
+                        isSaving = true
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                            _ = self.photoData.save()
+                            WidgetCenter.shared.reloadAllTimelines()
+                            isSaving = false
+                        }
+                    }) {
+                        Text(NSLocalizedString("save", comment: ""))
+                    }
+                }
+            })
+        }
         .navigationViewStyle(StackNavigationViewStyle())
-        .navigationBarItems(leading: ViewModePicker(viewMode: self.$viewMode), trailing:
-                                HStack {
-                                    RefreshTimeCustomizer()
-                                    Button(action: {
-                                        withAnimation(.easeInOut(duration: 0.3)) {
-                                            self.showTools = !self.showTools
-                                        }
-                                    }) {
-                                        Text(self.showTools ? NSLocalizedString("done", comment: ""):NSLocalizedString("edit", comment: ""))
-                                    }
-                                    if isSaving {
-                                        ProgressView().progressViewStyle(CircularProgressViewStyle()).padding()
-                                    }
-                                    else {
-                                        Button(action: {
-                                            isSaving = true
-                                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                                                _ = self.photoData.save()
-                                                WidgetCenter.shared.reloadAllTimelines()
-                                                isSaving = false
-                                            }
-                                        }) {
-                                            Text(NSLocalizedString("save", comment: ""))
-                                        }
-                                    }
-                                }
-        )
     }
 }
 

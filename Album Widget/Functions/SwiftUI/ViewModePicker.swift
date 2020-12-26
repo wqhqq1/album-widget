@@ -15,43 +15,53 @@ struct ViewModePicker: View {
         if self.viewMode == .cardView {
             DispatchQueue.main.async {
                 withAnimation(.default) {
-                    self.offset = 25
+                    self.offset = 20
                 }
             }
         }
         else {
             DispatchQueue.main.async {
                 withAnimation(.default) {
-                    self.offset = -25
+                    self.offset = -20
                 }
             }
         }
         return HStack{
             ZStack {
+                Rectangle()
+                    .foregroundColor(Color("gray"))
+                    .frame(width: 70, height: self.height)
+                    .cornerRadius(4)
+                    .opacity(0.5)
+                    .overlay(Divider())
+                HStack {
+                    Rectangle()
+                        .foregroundColor(Color("grayWhenDark"))
+                        .frame(width: self.height+5, height: self.height-1)
+                        .cornerRadius(4)
+                        .offset(x: self.offset)
+                        .foregroundColor(.white)
+                        .shadow(radius: 1)
+                }
+            }.overlay(HStack {
                 Button(action: {
                     withAnimation(.easeInOut) {
-                        self.viewMode = (self.viewMode == .tableView) ? .cardView:.tableView
+                        self.viewMode = .tableView
+                        UserDefaults.standard.set(viewModeConverter(viewMode: self.viewMode), forKey: "viewMode")
                     }
                 }) {
-                    Rectangle().foregroundColor(Color("gray"))
-                        .frame(width: 80, height: self.height)
-                        .cornerRadius(height/2)
-                        .overlay(HStack {
-                            if !(self.viewMode == .tableView) {
-                                Spacer()
-                            }
-                            Image(systemName: self.viewMode == .tableView ? "tablecells.fill":"creditcard.fill").padding(10)
-                            if !(self.viewMode == .cardView) {
-                                Spacer()
-                            }
-                        })
-                }
-                HStack {
-                    Rectangle().frame(width: self.height, height: self.height)
-                        .offset(x: self.offset)
-                        .foregroundColor(.white).shadow(radius: 1)
-                }
-            }
+                    Image(systemName: "tablecells.fill")
+                }.buttonStyle(OrigButtonStyle())
+                Spacer()
+                Button(action: {
+                    withAnimation(.easeInOut) {
+                        self.viewMode = .cardView
+                        UserDefaults.standard.set(viewModeConverter(viewMode: self.viewMode), forKey: "viewMode")
+                    }
+                }) {
+                    Image(systemName: "creditcard.fill")
+                }.buttonStyle(OrigButtonStyle())
+            }.padding(3))
         }
     }
 }

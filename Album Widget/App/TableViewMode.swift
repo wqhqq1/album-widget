@@ -92,33 +92,6 @@ struct TableViewMode: View {
                         }
                         .frame(width: geo.size.width)
                         .padding().navigationBarTitle(Text(NSLocalizedString("nvTitle", comment: "")))
-                        .navigationBarItems(leading: AutoRefreshToggle(), trailing:
-                        HStack {
-                            RefreshTimeCustomizer()
-                            Button(action: {
-                                withAnimation(.easeInOut(duration: 0.3)) {
-                                    self.showTools = !self.showTools
-                                }
-                            }) {
-                                Text(self.showTools ? NSLocalizedString("done", comment: ""):NSLocalizedString("edit", comment: ""))
-                            }
-                            if isSaving {
-                                ProgressView().progressViewStyle(CircularProgressViewStyle()).padding()
-                            }
-                            else {
-                                Button(action: {
-                                    isSaving = true
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                                        _ = self.photoData.save()
-                                        WidgetCenter.shared.reloadAllTimelines()
-                                        isSaving = false
-                                    }
-                                }) {
-                                    Text(NSLocalizedString("save", comment: ""))
-                                }
-                            }
-                        }
-                        )
                         Text("").frame(width: 0).alert(isPresented: self.$showError) {
                             Alert(title: Text("Fatal Error"), message: Text(self.message), dismissButton: .default(Text("OK")))
                         }
