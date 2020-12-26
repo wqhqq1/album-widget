@@ -81,11 +81,18 @@ struct AlbumWidgetEntryView : View {
                 if let photo = entry.photo {
                     Image(uiImage: UIImage(data: photo)!).resizable().scaledToFill()
                         .frame(width: geo.size.width, height: geo.size.height)
+                        .overlay(VStack {
+                            Spacer()
+                            HStack {
+                                Text(entry.displayStr).font(.title).fontWeight(.bold).padding(.leading).foregroundColor(.gray)
+                                Spacer()
+                            }
+                        })
                 }
                 VStack {
                     Spacer()
                     HStack {
-                        Text(entry.displayStr).font(.title).padding(.leading)
+                        Text(entry.displayStr).font(.title).fontWeight(.bold).padding(.leading).foregroundColor(.gray)
                         Spacer()
                     }
                 }
