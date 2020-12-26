@@ -26,6 +26,8 @@
 		08A539D92577B29900FB0DD8 /* Album.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 08A539DD2577B29900FB0DD8 /* Album.intentdefinition */; };
 		08A539DA2577B29900FB0DD8 /* Album.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 08A539DD2577B29900FB0DD8 /* Album.intentdefinition */; };
 		08A539DB2577B29900FB0DD8 /* Album.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 08A539DD2577B29900FB0DD8 /* Album.intentdefinition */; };
+		08B268682596F01D007A019C /* TableViewMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B268672596F01D007A019C /* TableViewMode.swift */; };
+		08B2686D2596F401007A019C /* ViewModePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2686C2596F401007A019C /* ViewModePicker.swift */; };
 		08BC37262568E54400D9A89D /* PhotoDropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BC37252568E54400D9A89D /* PhotoDropDelegate.swift */; };
 		08CCC75D258EE68700815E42 /* RefreshTimeCustomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CCC75C258EE68700815E42 /* RefreshTimeCustomizer.swift */; };
 		08E0B535258DE0B7004145B3 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E0B534258DE0B7004145B3 /* Random.swift */; };
@@ -99,6 +101,8 @@
 		08A539D32577B13C00FB0DD8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		08A539D52577B14100FB0DD8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		08A539E62577B2A200FB0DD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Base; path = Base.lproj/Album.intentdefinition; sourceTree = "<group>"; };
+		08B268672596F01D007A019C /* TableViewMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewMode.swift; sourceTree = "<group>"; };
+		08B2686C2596F401007A019C /* ViewModePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModePicker.swift; sourceTree = "<group>"; };
 		08BC37252568E54400D9A89D /* PhotoDropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDropDelegate.swift; sourceTree = "<group>"; };
 		08CCC75C258EE68700815E42 /* RefreshTimeCustomizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTimeCustomizer.swift; sourceTree = "<group>"; };
 		08E0B534258DE0B7004145B3 /* Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
@@ -181,6 +185,7 @@
 				0886B6B7258DEF8C003EC7A6 /* AutoRefreshToggle.swift */,
 				0800678B258E34C1006208FE /* TextToggleStyle.swift */,
 				08CCC75C258EE68700815E42 /* RefreshTimeCustomizer.swift */,
+				08B2686C2596F401007A019C /* ViewModePicker.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -257,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				08E8F85525638B3F00D64729 /* ContentView.swift */,
+				08B268672596F01D007A019C /* TableViewMode.swift */,
 				08EE4C892563CAB500A14113 /* CollectingPage.swift */,
 			);
 			path = App;
@@ -442,6 +448,7 @@
 			files = (
 				08E8F835256265A000D64729 /* AppDelegate.swift in Sources */,
 				08E8F85625638B3F00D64729 /* ContentView.swift in Sources */,
+				08B268682596F01D007A019C /* TableViewMode.swift in Sources */,
 				08E8F837256265A000D64729 /* SceneDelegate.swift in Sources */,
 				08BC37262568E54400D9A89D /* PhotoDropDelegate.swift in Sources */,
 				0886B6B8258DEF8C003EC7A6 /* AutoRefreshToggle.swift in Sources */,
@@ -453,6 +460,7 @@
 				08E23478257BB5F600820A02 /* NotificationDelegate.swift in Sources */,
 				08E8F8522562701D00D64729 /* SingleAlbumView.swift in Sources */,
 				08A539D92577B29900FB0DD8 /* Album.intentdefinition in Sources */,
+				08B2686D2596F401007A019C /* ViewModePicker.swift in Sources */,
 				08E8F859256393F700D64729 /* UITextField.swift in Sources */,
 				08EE4C8A2563CAB500A14113 /* CollectingPage.swift in Sources */,
 				08CCC75D258EE68700815E42 /* RefreshTimeCustomizer.swift in Sources */,
@@ -528,14 +536,14 @@
 				DEVELOPMENT_TEAM = 6T6JMWY77X;
 				INFOPLIST_FILE = Album/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = "1.0-rc";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wqhqq1.Album-Widget.Album";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wqhqq1.AlbumWidget.Album;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
@@ -560,14 +568,14 @@
 				DEVELOPMENT_TEAM = 6T6JMWY77X;
 				INFOPLIST_FILE = Album/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = "1.0-rc";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wqhqq1.Album-Widget.Album";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wqhqq1.AlbumWidget.Album;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
@@ -590,14 +598,14 @@
 				DEVELOPMENT_TEAM = 6T6JMWY77X;
 				INFOPLIST_FILE = AlbumIntent/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = "1.0-rc";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wqhqq1.Album-Widget.AlbumIntent";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wqhqq1.AlbumWidget.AlbumIntent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
@@ -620,14 +628,14 @@
 				DEVELOPMENT_TEAM = 6T6JMWY77X;
 				INFOPLIST_FILE = AlbumIntent/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = "1.0-rc";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wqhqq1.Album-Widget.AlbumIntent";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wqhqq1.AlbumWidget.AlbumIntent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
@@ -773,13 +781,13 @@
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Album Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = "1.0-rc";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wqhqq1.Album-Widget";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wqhqq1.AlbumWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
@@ -806,13 +814,13 @@
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Album Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = "1.0-rc";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wqhqq1.Album-Widget";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wqhqq1.AlbumWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";

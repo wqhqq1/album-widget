@@ -157,11 +157,11 @@ class PhotoData: ObservableObject {
         return nil
     }
     
-    func getData(in index: Int, at idx: Int?) -> Any {
+    func getData(in index: Int, at idx: Int?) -> Any? {
         guard let idx = idx else {
-            return try! String(contentsOf: defaultPath.appendingPathComponent("photoConfig\(index)"), encoding: .utf8)
+            return try? String(contentsOf: defaultPath.appendingPathComponent("photoConfig\(index)"), encoding: .utf8)
         }
-        return try! Data(contentsOf: defaultPath.appendingPathComponent("photo\(index).\(idx)"))
+        return try? Data(contentsOf: defaultPath.appendingPathComponent("photo\(index).\(idx)"))
     }
 }
 

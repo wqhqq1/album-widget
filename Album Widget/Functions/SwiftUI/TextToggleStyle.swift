@@ -35,7 +35,7 @@ struct TextToggleStyle: ToggleStyle {
                         if !configuration.isOn {
                             Spacer()
                         }
-                        Text(configuration.isOn ? "ON":"OFF").padding()
+                        Text(configuration.isOn ? " ON":"OFF").padding(10)
                         if configuration.isOn {
                             Spacer()
                         }
