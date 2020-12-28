@@ -21,6 +21,7 @@ struct ContentView: View {
                 once.toggle()
             }
         }
+//        print(self.photoData.Photo[0][3].data.getPreferredColor())
         return NavigationView {
             VStack {
                 if viewMode == .tableView {
@@ -35,7 +36,7 @@ struct ContentView: View {
             .navigationBarTitle(Text(NSLocalizedString("nvTitle", comment: "")))
             .navigationBarItems(leading: HStack{
                 AutoRefreshToggle()
-                ViewModePicker(viewMode: self.$viewMode)
+//                ViewModePicker(viewMode: self.$viewMode)
             }, trailing: HStack {
                 RefreshTimeCustomizer()
                 Button(action: {

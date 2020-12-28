@@ -25,7 +25,7 @@ struct Provider: IntentTimelineProvider {
         let albumIndex = (0..<albumRange).random
         let photoRange = Int(try! String(contentsOf: defaultPath.appendingPathComponent("range\(albumIndex)"), encoding: .utf8))!
         if photoRange == 0 {
-            completion(SimpleEntry(date: Date(), displayStr: "There's no photo in the album!"))
+            completion(SimpleEntry(date: Date(), displayStr: NSLocalizedString("noContent", comment: "")))
             return
         }
         let photoIndex = (0..<photoRange).random
@@ -52,7 +52,9 @@ struct Provider: IntentTimelineProvider {
             let idxInt = (0..<rangeInt).random
             let photo = data.getData(in: album, at: idxInt) as! Data
 //            let name = data.getData(in: album, at: nil) as! String
-            entry = SimpleEntry(date: currentDate, photo: photo, displayStr: configuration.Album?.displayString ?? "")
+            let preferredColorFloat = UIImage(data: photo)!.getPreferredColor()!
+            let preferredColor = Color(.displayP3, white: 1-Double(preferredColorFloat), opacity: 1)
+            entry = SimpleEntry(date: currentDate, photo: photo, displayStr: configuration.Album?.displayString ?? NSLocalizedString("neverSet", comment: ""), preferredColor: preferredColor)
             try! "\(idxInt + 1)".write(to: defaultPath.appendingPathComponent("idx")
                               , atomically: true, encoding: .utf8)
         }
@@ -70,6 +72,7 @@ struct SimpleEntry: TimelineEntry {
     let date: Date
     var photo: Data? = nil
     var displayStr: String = ""
+    var preferredColor = Color.gray
 }
 
 struct AlbumWidgetEntryView : View {
@@ -84,7 +87,11 @@ struct AlbumWidgetEntryView : View {
                         .overlay(VStack {
                             Spacer()
                             HStack {
-                                Text(entry.displayStr).font(.title).fontWeight(.bold).padding(.leading).foregroundColor(.gray)
+                                Text(entry.displayStr)
+                                    .font(entry.displayStr.count>3 ? .headline:.custom("", size: 50))
+                                    .fontWeight(.bold)
+                                    .padding(.leading)
+                                    .foregroundColor(entry.preferredColor)
                                 Spacer()
                             }
                         })
@@ -92,7 +99,11 @@ struct AlbumWidgetEntryView : View {
                 VStack {
                     Spacer()
                     HStack {
-                        Text(entry.displayStr).font(.title).fontWeight(.bold).padding(.leading).foregroundColor(.gray)
+                        Text(entry.displayStr)
+                            .font(entry.displayStr.count>3 ? .headline:.custom("", size: 50))
+                            .fontWeight(.bold)
+                            .padding(.leading)
+                            .foregroundColor(entry.preferredColor)
                         Spacer()
                     }
                 }

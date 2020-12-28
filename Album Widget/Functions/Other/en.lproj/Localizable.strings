@@ -28,3 +28,4 @@ noContent = "There's no photo in the album ";
 autoRefresh = "AutoRefresh";
 refresh01 = "Refresh after(h)";
 refresh02 = "";
+neverSet = "The album is never been set, please choose one in widget settings";

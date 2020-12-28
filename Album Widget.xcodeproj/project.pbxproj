@@ -28,6 +28,8 @@
 		08A539DB2577B29900FB0DD8 /* Album.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 08A539DD2577B29900FB0DD8 /* Album.intentdefinition */; };
 		08B268682596F01D007A019C /* TableViewMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B268672596F01D007A019C /* TableViewMode.swift */; };
 		08B2686D2596F401007A019C /* ViewModePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2686C2596F401007A019C /* ViewModePicker.swift */; };
+		08BBCA592598413E0090B1DA /* GetPreferredColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BBCA582598413E0090B1DA /* GetPreferredColor.swift */; };
+		08BBCA5D259841530090B1DA /* GetPreferredColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BBCA582598413E0090B1DA /* GetPreferredColor.swift */; };
 		08BC37262568E54400D9A89D /* PhotoDropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BC37252568E54400D9A89D /* PhotoDropDelegate.swift */; };
 		08CCC75D258EE68700815E42 /* RefreshTimeCustomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CCC75C258EE68700815E42 /* RefreshTimeCustomizer.swift */; };
 		08E0B535258DE0B7004145B3 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E0B534258DE0B7004145B3 /* Random.swift */; };
@@ -104,6 +106,7 @@
 		08A539E62577B2A200FB0DD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Base; path = Base.lproj/Album.intentdefinition; sourceTree = "<group>"; };
 		08B268672596F01D007A019C /* TableViewMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewMode.swift; sourceTree = "<group>"; };
 		08B2686C2596F401007A019C /* ViewModePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModePicker.swift; sourceTree = "<group>"; };
+		08BBCA582598413E0090B1DA /* GetPreferredColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPreferredColor.swift; sourceTree = "<group>"; };
 		08BC37252568E54400D9A89D /* PhotoDropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDropDelegate.swift; sourceTree = "<group>"; };
 		08CCC75C258EE68700815E42 /* RefreshTimeCustomizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTimeCustomizer.swift; sourceTree = "<group>"; };
 		08E0B534258DE0B7004145B3 /* Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
@@ -198,6 +201,7 @@
 				08E8F858256393F700D64729 /* UITextField.swift */,
 				08E8F85E2563B02E00D64729 /* PhotoPicker.swift */,
 				08E23477257BB5F600820A02 /* NotificationDelegate.swift */,
+				08BBCA582598413E0090B1DA /* GetPreferredColor.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -429,6 +433,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				08E0B53D258DE3C4004145B3 /* Random.swift in Sources */,
+				08BBCA5D259841530090B1DA /* GetPreferredColor.swift in Sources */,
 				08615FA9256A485C00CB5A5F /* Photo Data.swift in Sources */,
 				08A539DA2577B29900FB0DD8 /* Album.intentdefinition in Sources */,
 				08615F99256A484F00CB5A5F /* Album.swift in Sources */,
@@ -463,6 +468,7 @@
 				08E23478257BB5F600820A02 /* NotificationDelegate.swift in Sources */,
 				08E8F8522562701D00D64729 /* SingleAlbumView.swift in Sources */,
 				08A539D92577B29900FB0DD8 /* Album.intentdefinition in Sources */,
+				08BBCA592598413E0090B1DA /* GetPreferredColor.swift in Sources */,
 				08B2686D2596F401007A019C /* ViewModePicker.swift in Sources */,
 				08E8F859256393F700D64729 /* UITextField.swift in Sources */,
 				08EE4C8A2563CAB500A14113 /* CollectingPage.swift in Sources */,
